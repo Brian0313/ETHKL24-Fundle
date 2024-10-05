@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { ethers } from "ethers";
 import { useCrowdfunding } from "../context";
 
-import { CustomButton, FormField, Loader, WorldcoinVerification } from "../components";
+import { CustomButton, FormField, Loader } from "../components";
 import { checkIfImage } from "../utils";
 
 const CreateCampaign = () => {
@@ -26,18 +26,6 @@ const CreateCampaign = () => {
     setForm({ ...form, [fieldName]: e.target.value });
   };
 
-  const handleVerificationSuccess = () => {
-    setIsVerified(true);
-    alert("Worldcoin verification successful! You can now submit the campaign.");
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    if (!isVerified) {
-      alert("Please complete Worldcoin verification before submitting.");
-      return;
-    }
 
     checkIfImage(form.image, async (exists) => {
       if (exists) {
@@ -63,10 +51,10 @@ const CreateCampaign = () => {
         </h1>
 
 
-      <form
+
         onSubmit={handleSubmit}
         className="w-full mt-[65px] flex flex-col gap-[30px]"
-      >
+
         <div className="flex flex-wrap gap-[40px]">
           <FormField
             labelName="Your name *"
@@ -113,13 +101,6 @@ const CreateCampaign = () => {
           value={form.image}
           handleChange={(e) => handleFormFieldChange("image", e)}
         />
-        <div className="flex items-center justify-between mt-[40px]">
-          <div className="flex-grow">
-            <WorldcoinVerification
-              onVerify={handleVerificationSuccess}
-              isVerified={isVerified}
-            />
-          </div>
           <div className="ml-4">
             <CustomButton
               btnType="submit"
@@ -128,9 +109,10 @@ const CreateCampaign = () => {
             />
           </div>
         </div>
-      </form>
-    </div>
-  );
-};
 
-export default CreateCampaign;
+
+
+
+  );
+  
+  export default CreateCampaign;
