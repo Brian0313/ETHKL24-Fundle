@@ -16,7 +16,7 @@ const SCROLL_SEPOLIA_NATIVE_CURRENCY = {
 };
 
 // Contract address on Scroll-Sepolia
-const CONTRACT_ADDRESS = '0x5cb3B3e67616d876D9B6f90b7E76d88DA6C869Cb';
+const CONTRACT_ADDRESS = '0x42e885ceddA020934e5417486A8b4453Aa4a05f0';
 
 const CrowdfundingContext = createContext();
 
