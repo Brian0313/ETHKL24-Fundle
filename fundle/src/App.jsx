@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { Home } from './pages';
+import { Home, CreateCampaign } from './pages';
 import { Navbar } from './components';
 
 const App = () => {
